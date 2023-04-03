@@ -3,14 +3,14 @@ package me.engel.sergey.coursework3.service.impl;
 import me.engel.sergey.coursework3.service.SocksFilesService;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
+@Service
 public class SocksFilesServiceImpl implements SocksFilesService {
     @Value("${path.to.files.folder}")
     private String socksFilesPath;
@@ -37,6 +37,7 @@ public class SocksFilesServiceImpl implements SocksFilesService {
             throw new RuntimeException(e);
         }
     }
+
 
     @Override
     public File getDataFile() {
